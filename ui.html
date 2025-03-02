@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI-COMPONENTS</title>
+    <style>
+          *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;   
+}
+.cnt-head
+{
+    padding-top: 40px;
+    text-align: center;
+}
+.loader {
+    display: flex;
+  }
+  .cube {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: spin 4s infinite linear;
+  }
+  .side {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    opacity: 0.8;
+  }
+  .front {
+    transform: translateZ(50px);
+    background: linear-gradient(45deg, #ff4e50, #f9d423);
+  }
+  .back {
+    transform: translateZ(-50px);
+    background: linear-gradient(45deg, #40e0d0, #ff8c00);
+  }
+  .top {
+    transform: rotateX(90deg) translateZ(50px);
+    background: linear-gradient(45deg, #800080, #00bfff);
+  }
+  .bottom {
+    transform: rotateX(90deg) translateZ(-50px);
+    background: linear-gradient(45deg, #008000, #ffff00);
+  }
+  .left {
+    transform: rotateY(90deg) translateZ(50px);
+    background: linear-gradient(45deg, #0000ff, #ff1493);
+  }
+  .right {
+    transform: rotateY(90deg) translateZ(-50px);
+    background: linear-gradient(45deg, #00ffff, #ff0000);
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotateX(0deg) rotateY(0deg);
+    }
+  
+    100% {
+      transform: rotateX(360deg) rotateY(360deg);
+    }
+  }
+
+.load
+{
+    display: flex;
+    gap: 10px;
+    font-size: 25px;
+    height: 40px;
+    color: rgb(124, 124, 124);
+    font-family: "Poppins", sans-serif; 
+    box-sizing: content-box;
+    border-radius: 8px;
+    padding: 10px 10px;
+}
+
+.words
+{
+    overflow: hidden;
+    position: relative;
+}
+.word
+{
+    display: block;
+    height: 100%;
+    color: #956afa;
+    animation: spin1 4s infinite;;
+}
+@keyframes spin1 {
+    10% { 
+      transform: translateY(-102%);
+    }
+    25% {
+      transform: translateY(-100%);
+    }
+    35% { 
+      transform: translateY(-202%);
+    }
+    50% {
+      transform: translateY(-200%);
+    }
+    60% {
+      transform: translateY(-302%);
+    }
+    75% {
+      transform: translateY(-300%);
+    }
+    85% {
+      transform: translateY(-402%);
+    }
+    100% {
+      transform: translateY(-400%);
+    }
+  }
+  .blog
+  {    
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      
+  }
+  .front1
+  {
+      position: absolute;
+      height: 250px;
+      width: 200px;
+      border: 1px solid black;
+      border-radius: 15px;
+      background-color: rgb(102, 188, 115);
+      transition: all 2s;
+      color: white;
+      text-align: center;
+      padding-top: 90px;
+      backface-visibility: hidden;
+      left: 100px;
+  }
+  .back1
+  {   
+      position: relative;   
+      width: 200px;
+      height: 250px;
+      display: flex;
+      justify-content: center ;
+      align-items: center;
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 1px 7px 29px rgba(32, 32, 34, 0.2) ;
+      backface-visibility: hidden;
+      margin-left: 100px;
+      z-index: -1;
+      backface-visibility: hidden; 
+      background-color: white;
+  }
+  .front1
+  {
+      display: flex;
+      justify-content: center ;
+      padding-top: 180px;
+      transform-style: preserve-3d;
+      z-index: 1;
+      backface-visibility: hidden ;
+       transform-origin: 0;
+  }
+  .front1:hover
+  {
+   transform:  perspective(2000px) rotateY(-85deg);
+   transition: all 0.5s;
+  } 
+  .button
+{
+    position: relative;
+    height: 50px;
+    width: 200px;
+    border-radius: 40px;
+    background-color: transparent;
+    color: #c0b4b4;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    border: 2px solid white;
+}
+
+.btn-txt {
+    z-index: 1;
+    font-weight: 800;
+    letter-spacing: 4px;
+  }
+.type1::after{
+    content: "";
+    position: absolute;
+    transition: all 0.5s ease-in-out;
+    top: 0;
+    left: 0;
+    height: 10px;
+    width: 10px;
+    border-radius: 30px;
+    background: linear-gradient(120deg, #FF6F61, #6B5B95, #88B04B, #F7CAC9, #92A8D1);    z-index: -1;
+}
+.button:hover
+{
+    color: #fff;
+    border: none;
+    box-shadow: 1px 1px 200px #252525;
+}
+.type1:hover::after
+{
+    visibility: visible;
+    transform: scale(100) translateX(2px);
+}
+.card1
+{   
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 2px solid black;
+    height: 250px;
+    width: 200px;
+    border-radius: 20px;
+    border: 1px transparent solid;
+    box-shadow: 0px 0px 5px rgb(255, 255, 255,0.4);
+    color: white;
+}
+.card1::before
+{   content: "Hover me";
+   position: absolute;
+    height: 235px;
+    width: 185px;
+    z-index: 10;
+    background-color: black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    
+}
+.card1::after{
+content: "";
+height: 250px;
+width: 200px;
+ z-index: 1;
+position: absolute;
+background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100% );
+border-radius: 10px;
+transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.card1:hover::after
+{
+transform: rotate(-180deg);
+}
+.card3
+        {    
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            border: 2px solid black;
+            height: 250px;
+            width: 200px;
+            border-radius: 20px;
+            border: 1px transparent solid;
+            box-shadow: 0px 0px 5px rgb(255, 255, 255,0.4);
+            color: white;
+            overflow: hidden;
+            background-color: #07182E   ;
+        }
+        .card3::before
+        {   content: "CARD";
+           position: absolute;
+            height: 235px;
+            width: 185px;
+            z-index: 10;
+            background-color: black;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: xx-large;
+            font-weight: bold;
+
+      }
+      .card3::after{
+        content: "";
+        position:relative;
+        height: 150%;
+        width: 100px;
+         z-index: 1;
+        position: absolute;
+        background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100% );
+        border-radius: 10px;
+        transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        animation: spin2 3s linear infinite;
+      }
+  
+      @keyframes spin2 {
+        from
+        {
+            transform: rotate(0deg);
+        }
+       to
+       {
+         transform: rotate(360deg);
+       }
+        
+      }
+      .container1
+        {
+            position: relative;
+            width: 120px;
+            height: 90px;
+            margin: 0 auto;
+            z-index: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container1::before
+        {
+            content: "";
+            position: absolute;
+            height: 30px;
+            width: 30px;
+            left: -3px;
+            bottom: -10px;
+            border-radius:50%;
+            background:#2a9d8f;
+            animation: loading-bounce 0.5s ease-in-out infinite alternate; 
+            z-index: 0;  
+        }
+        .container1::after
+        {
+            content: "";
+            height: 7px;
+            width: 55px;
+            top: 0;
+            right: 100px;
+            z-index: 0;
+            border-radius: 4px;
+            box-shadow: 0 5px 0 #f2f2f2, -35px 50px 0 #f2f2f2, -70px 95px 0 #f2f2f2;
+            animation: loading-step 1s ease-in-out infinite;
+        }
+        @keyframes loading-bounce {
+           0%
+           {
+            transform: scale(1,0.7);
+           }
+           40%{
+            transform: scale(0.8,1.2);
+           }
+           60%{
+            transform: scale(1,1);
+           }
+           100%
+           {
+            bottom: 140px;
+           }
+        }
+        @keyframes loading-step {
+            0%
+            {
+                box-shadow: 0 10px 0 rgba(0, 0, 0, 0),
+                0 10px 0 #f2f2f2,
+                -35px 50px 0 #f2f2f2,
+                -70px 90px 0 #f2f2f2;
+            }
+            100% {
+            box-shadow: 0 10px 0 #f2f2f2,
+                -35px 50px 0 #f2f2f2,
+                -70px 90px 0 #f2f2f2,
+                -70px 90px 0 rgba(0, 0, 0, 0);
+            }
+        }
+        .container2
+        {
+            position: relative;
+            height: 50px;
+            width: 150px;
+            border-radius: 25px;
+            background-color: black;
+            padding: 9px;
+            padding-left:18px ;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all .5s ease;
+        }
+        .hidden{
+            display: flex;
+            justify-content: space-around;
+            width: 150px;
+            border-radius: 80px;
+            line-height: 50px;
+         }
+        .head
+        {
+            position: absolute;
+            width: 150px;
+            height: 50px;
+            border-radius: 80px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 600;
+            font-size: 17px;
+            text-align: center;
+            line-height: 50px;
+            letter-spacing: 2px;
+            color: #eeeeed;
+            padding: 0 10px;
+            transition: all 1.5s ease;
+        }
+        .container2:hover{
+            transform: scale(1.1);
+            background-color: white;
+        }
+        .container2:hover .head {
+            opacity: 0; 
+        }
+        .container2:hover .svg
+        {                                  
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .container2:hover.hidden{
+            opacity: 1;
+        }
+        .container2:hover .hidden svg:nth-of-type(1) {
+            opacity: 1;
+            transition-delay:  0.5s;
+        }
+
+        .container2:hover .hidden svg:nth-of-type(2) {
+            opacity: 1;
+             transition-delay:  1s;
+        }   
+
+        .container2:hover .hidden svg:nth-of-type(3) {
+            opacity: 1;
+                transition-delay: 1.5s ;
+            }                                       
+      
+  .components
+  {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 50px ;
+    margin-bottom: 30px;
+  }
+  .component
+  {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding-top: 80px;
+    background-color: rgb(108, 68, 68);
+    border-radius: 10px;
+    z-index: 0;
+    margin-top: 20px;
+  }
+ 
+#card
+{
+    padding-top:38px;
+}
+#card1
+{
+    padding-top: 20px;
+    padding-right:80px;
+}
+#card2
+{
+    padding-top: 150px;
+}
+#card3
+{
+    padding-top: 40px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="cnt-head" style="color: white;">
+        <h1>UI-COMPONENTS</h1>
+    </div>
+    <div class="components">
+        <div class="card component" style="width: 18rem; height: 300px; border: 2px solid rgb(108, 68, 68);;" id="c1">
+            <div class="loader">
+                <div class="cube">
+                    <div class= "side front"></div>
+                    <div class= "side back"> </div>
+                    <div class= "side left"></div>
+                    <div class= "side right"></div>
+                    <div class= "side  top"></div>
+                    <div class= "side bottom"></div>
+                </div>
+            </div>
+        </div>
+        <div class="card component"  style="width: 18rem; height: 300px; border: 2px solid rgb(108, 68, 68);" id="c1">
+            <div class="container2">
+                <h class="head">HOVER ME</h>
+                <div class="hidden">
+                    <svg height="35" width="35" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1024 1024" class="icon">
+                    <path fill="" d="M962.267429 233.179429q-38.253714 56.027429-92.598857 95.451429 0.585143 7.972571 0.585143 23.990857 0 74.313143-21.723429 148.260571t-65.974857 141.970286-105.398857 120.32-147.456 83.456-184.539429 31.158857q-154.843429 0-283.428571-82.870857 19.968 2.267429 44.544 2.267429 128.585143 0 229.156571-78.848-59.977143-1.170286-107.446857-36.864t-65.170286-91.136q18.870857 2.852571 34.889143 2.852571 24.576 0 48.566857-6.290286-64-13.165714-105.984-63.707429t-41.984-117.394286l0-2.267429q38.838857 21.723429 83.456 23.405714-37.741714-25.161143-59.977143-65.682286t-22.308571-87.990857q0-50.322286 25.161143-93.110857 69.12 85.138286 168.301714 136.265143t212.260571 56.832q-4.534857-21.723429-4.534857-42.276571 0-76.580571 53.979429-130.56t130.56-53.979429q80.018286 0 134.875429 58.294857 62.317714-11.995429 117.174857-44.544-21.138286 65.682286-81.115429 101.741714 53.174857-5.705143 106.276571-28.598857z"></path>
+                  </svg>
+                  <svg height="35" width="35" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1024 1024" class="icon">
+                    <path fill="" d="M123.52064 667.99143l344.526782 229.708899 0-205.136409-190.802457-127.396658zM88.051421 585.717469l110.283674-73.717469-110.283674-73.717469 0 147.434938zM556.025711 897.627196l344.526782-229.708899-153.724325-102.824168-190.802457 127.396658 0 205.136409zM512 615.994287l155.406371-103.994287-155.406371-103.994287-155.406371 103.994287zM277.171833 458.832738l190.802457-127.396658 0-205.136409-344.526782 229.708899zM825.664905 512l110.283674 73.717469 0-147.434938zM746.828167 458.832738l153.724325-102.824168-344.526782-229.708899 0 205.136409zM1023.926868 356.00857l0 311.98286q0 23.402371-19.453221 36.566205l-467.901157 311.98286q-11.993715 7.459506-24.57249 7.459506t-24.57249-7.459506l-467.901157-311.98286q-19.453221-13.163834-19.453221-36.566205l0-311.98286q0-23.402371 19.453221-36.566205l467.901157-311.98286q11.993715-7.459506 24.57249-7.459506t24.57249 7.459506l467.901157 311.98286q19.453221 13.163834 19.453221 36.566205z"></path>
+                  </svg>
+                  <svg height="35" width="35" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1024 1024" class="icon">
+                    <path fill="" d="M950.930286 512q0 143.433143-83.748571 257.974857t-216.283429 158.573714q-15.433143 2.852571-22.601143-4.022857t-7.168-17.115429l0-120.539429q0-55.442286-29.696-81.115429 32.548571-3.437714 58.587429-10.313143t53.686857-22.308571 46.299429-38.034286 30.281143-59.977143 11.702857-86.016q0-69.12-45.129143-117.686857 21.138286-52.004571-4.534857-116.589714-16.018286-5.12-46.299429 6.290286t-52.589714 25.161143l-21.723429 13.677714q-53.174857-14.848-109.714286-14.848t-109.714286 14.848q-9.142857-6.290286-24.283429-15.433143t-47.689143-22.016-49.152-7.68q-25.161143 64.585143-4.022857 116.589714-45.129143 48.566857-45.129143 117.686857 0 48.566857 11.702857 85.723429t29.988571 59.977143 46.006857 38.253714 53.686857 22.308571 58.587429 10.313143q-22.820571 20.553143-28.013714 58.88-11.995429 5.705143-25.746286 8.557714t-32.548571 2.852571-37.449143-12.288-31.744-35.693714q-10.825143-18.285714-27.721143-29.696t-28.306286-13.677714l-11.410286-1.682286q-11.995429 0-16.603429 2.56t-2.852571 6.582857 5.12 7.972571 7.460571 6.875429l4.022857 2.852571q12.580571 5.705143 24.868571 21.723429t17.993143 29.110857l5.705143 13.165714q7.460571 21.723429 25.161143 35.108571t38.253714 17.115429 39.716571 4.022857 31.744-1.974857l13.165714-2.267429q0 21.723429 0.292571 50.834286t0.292571 30.866286q0 10.313143-7.460571 17.115429t-22.820571 4.022857q-132.534857-44.032-216.283429-158.573714t-83.748571-257.974857q0-119.442286 58.88-220.306286t159.744-159.744 220.306286-58.88 220.306286 58.88 159.744 159.744 58.88 220.306286z"></path>
+                  </svg>
+        
+                </div>
+            </div>
+        </div>
+        <div class="card component" style="width: 18rem; height: 300px; border: 2px solid rgb(108, 68, 68);" id="c1">
+            <div class="container">
+                <div class="load">
+                   <p>loading</p>
+               
+                <div class="words">
+                    <span class="word">buttons</span>
+                    <span class="word">forms</span>
+                    <span class="word">switches</span>
+                    <span class="word">cards</span>
+                    <span class="word">buttons</span>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="card component" id="card1" style="width: 18rem; height: 300px; border: 2px solid rgb(108, 68, 68);" id="c1">
+            <div class="blog">
+                <div class="front1">
+                  <h3>HOVER ME</h3>
+                </div>
+                <div class="back1">
+                    <h3>HELLO</h3>
+                  </div>
+              </div>
+        </div>
+        <div class="card component" id="card2" style="width: 18rem; height: 300px; border: 2px solid rgb(108, 68, 68);" id="c1">
+            <button class="button type1">
+                <span class="btn-txt">Hover</span>
+              </button>
+        </div>
+        <div class="card component" id="card3" style="width: 18rem; height: 300px; border: 2px solid rgb(108, 68, 68);" id="c1">
+            <div class="container">
+                <div class="card1">
+                  </div>
+              </div>
+        </div>
+        <div class="card component" id="card3" style="width: 18rem; height: 300px; border: 2px solid rgb(108, 68, 68);" id="c1">
+            <div class="container">
+                <div class="card3">
+                  </div>
+              </div>
+        </div>
+        <div class="card component" style="width: 18rem; height: 300px; border: 2px solid rgb(108, 68, 68);" id="c1">
+           
+          <div class="container1"></div>
+        </div>
+    </div>
+</body>
+</html>
