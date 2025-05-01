@@ -1,4 +1,4 @@
-    * {
+* {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
@@ -305,13 +305,13 @@
         width: 80%;
     }
     .about-stats .progress-bars .progress-bar .progress-container .progress .Javascript  {
-        width: 70%;
+        width: 50%;
     }
     .about-stats .progress-bars .progress-bar .progress-container .progress .ui {
-        width: 80%;
+        width: 50%;
     }
     .about-stats .progress-bars .progress-bar .progress-container .progress .python {
-        width: 85%;
+        width: 50%;
     }
 
     .stat-tittle {
@@ -771,4 +771,16 @@
         .header-content .left-header {
             display: none; 
         }
+    }
+
+    .image {
+        background: black; 
+        border-radius: 15px; 
+        overflow: hidden;
+    }
+    .image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
     }
